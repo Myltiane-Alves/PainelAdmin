@@ -11,6 +11,7 @@ import RTL from 'views/admin/rtl';
 // Auth Imports
 import SignInCentered from 'views/auth/signIn';
 import ProductCreated from 'views/admin/ProductCreated';
+import ProductList from 'views/admin/ProductList';
 
 const routes = [
 	{
@@ -41,6 +42,13 @@ const routes = [
 		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
 		path: '/produtos',
 		component: ProductCreated
+	},
+	{
+		name: 'Lista de Produtos',
+		layout: '/admin',
+		icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+		path: '/lista-produtos',
+		component: ProductList
 	},
 	{
 		name: 'Profile',
