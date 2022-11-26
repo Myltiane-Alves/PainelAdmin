@@ -58,9 +58,16 @@ const routes = [
 		component: Profile
 	},
 	{
-		name: 'Sign In',
+		name: 'Login',
 		layout: '/auth',
-		path: '/sign-in',
+		path: '/login',
+		icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
+		component: SignInCentered
+	},
+	{
+		name: 'Register',
+		layout: '/auth',
+		path: '/register',
 		icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
 		component: SignInCentered
 	},

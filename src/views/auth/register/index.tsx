@@ -26,7 +26,7 @@ import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 
-function SignIn() {
+function Register() {
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
@@ -61,7 +61,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Login
+            Cadastro de Usuário
           </Heading>
           <Text
             mb='36px'
@@ -215,4 +215,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default Register;
