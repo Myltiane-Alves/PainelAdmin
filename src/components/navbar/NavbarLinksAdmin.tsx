@@ -148,9 +148,9 @@ export default function HeaderLinks(props: { secondary: boolean }) {
 								See Documentation
 							</Button>
 						</Link>
-						<Link w='100%' href='https://github.com/horizon-ui/horizon-ui-chakra-ts'>
+						<Link w='100%' href=''>
 							<Button w='100%' h='44px' variant='no-hover' color={textColor} bg='transparent'>
-								Try Horizon Free
+								Try Horizon Free 1010
 							</Button>
 						</Link>
 					</Flex>

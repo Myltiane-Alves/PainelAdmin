@@ -1,23 +1,27 @@
 /* eslint-disable */
 
-import { Flex, Link, List, ListItem, Text, useColorModeValue } from '@chakra-ui/react';
+import { ButtonGroup, Flex, IconButton, Link, List, ListItem, Text, useColorModeValue } from '@chakra-ui/react';
+import { AiFillGithub } from 'react-icons/ai';
+import { BsLinkedin } from 'react-icons/bs';
+import { RiWhatsappFill } from 'react-icons/ri';
 
 export default function Footer() {
 	let textColor = useColorModeValue('gray.400', 'white');
 	let linkColor = useColorModeValue({ base: 'gray.400', lg: 'white' }, 'white');
 	return (
 		<Flex
+			bg="transparent"
 			zIndex='3'
 			flexDirection={{
 				base: 'column',
-				lg: 'row'
+				xl: 'row'
 			}}
 			alignItems={{
 				base: 'center',
 				xl: 'start'
 			}}
 			justifyContent='space-between'
-			px={{ base: '30px', md: '0px' }}
+			px={{ base: '30px', md: '50px' }}
 			pb='30px'>
 			<Text
 				color={textColor}
@@ -25,49 +29,51 @@ export default function Footer() {
 					base: 'center',
 					xl: 'start'
 				}}
-				mb={{ base: '20px', lg: '0px' }}>
+				mb={{ base: '20px', xl: '0px' }}>
 				{' '}
 				&copy; {new Date().getFullYear()}
 				<Text as='span' fontWeight='500' ms='4px'>
-					Horizon UI. All Rights Reserved. Made with love by
+
 					<Link mx='3px' color={textColor} href='https://www.simmmple.com' target='_blank' fontWeight='700'>
-						Simmmple!
+						Myltiane Alves
 					</Link>
 				</Text>
 			</Text>
 			<List display='flex'>
-				<ListItem
-					me={{
-						base: '20px',
-						md: '44px'
-					}}>
-					<Link fontWeight='500' color={linkColor} href='mailto:hello@simmmple.com'>
-						Support
+				<ButtonGroup variant="solid" size="sm" spacing={3}>
+					<Link fontWeight='500' color={textColor} href='https://www.linkedin.com/in/myltiane-alves/'>
+
+						<IconButton
+							colorScheme="blue"
+							icon={<RiWhatsappFill />}
+							aria-label="Up"
+							alignItems={"center"}
+							bg="#1AD03F"
+						/>
 					</Link>
-				</ListItem>
-				<ListItem
-					me={{
-						base: '20px',
-						md: '44px'
-					}}>
-					<Link fontWeight='500' color={linkColor} href='https://www.simmmple.com/licenses'>
-						License
+					<Link fontWeight='500' color={textColor} href='https://www.linkedin.com/in/myltiane-alves/'>
+
+						<IconButton
+							colorScheme="green"
+							icon={<BsLinkedin />}
+							aria-label="Edit"
+							alignItems="center"
+							bg="#0073B1"
+						/>
 					</Link>
-				</ListItem>
-				<ListItem
-					me={{
-						base: '20px',
-						md: '44px'
-					}}>
-					<Link fontWeight='500' color={linkColor} href='https://simmmple.com/terms-of-service'>
-						Terms of Use
+					<Link fontWeight='500' color={textColor} href='https://github.com/Myltiane-Alves'>
+
+						<IconButton
+							colorScheme="#24292F"
+							variant="outline"
+							icon={<AiFillGithub />}
+							aria-label="Delete"
+							alignItems="center"
+							bg="#24292F"
+						/>
 					</Link>
-				</ListItem>
-				<ListItem>
-					<Link fontWeight='500' color={linkColor} href='https://www.blog.simmmple.com/'>
-						Blog
-					</Link>
-				</ListItem>
+				</ButtonGroup>
+
 			</List>
 		</Flex>
 	);

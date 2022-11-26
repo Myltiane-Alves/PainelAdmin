@@ -98,7 +98,7 @@ export default function AdminNavbar(props: {
 					<Breadcrumb>
 						<BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
 							<BreadcrumbLink href='#' color={secondaryText}>
-								Pages
+								Páginas
 							</BreadcrumbLink>
 						</BreadcrumbItem>
 
@@ -125,16 +125,16 @@ export default function AdminNavbar(props: {
 						_focus={{
 							boxShadow: 'none'
 						}}>
-						{brandText}
+						
 					</Link>
 				</Box>
-				<Box ms='auto' w={{ sm: '100%', md: 'unset' }}>
+				{/* <Box ms='auto' w={{ sm: '100%', md: 'unset' }}>
 					<AdminNavbarLinks
 						onOpen={props.onOpen} 
 						secondary={props.secondary}
 						fixed={props.fixed} 
 					/>
-				</Box>
+				</Box> */}
 			</Flex> 
 		</Box>
 	);

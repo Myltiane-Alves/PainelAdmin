@@ -32,7 +32,7 @@ function AuthIllustration(props: { children: JSX.Element | string; illustrationB
 					to='/admin'
 					style={() => ({
 						width: 'fit-content',
-						marginTop: '40px'
+						marginTop: '0px'
 					})}>
 					<Flex align='center' ps={{ base: '25px', lg: '0px' }} pt={{ lg: '0px', xl: '0px' }} w='fit-content'>
 						<Icon as={FaChevronLeft} me='12px' h='13px' w='8px' color='secondaryGray.600' />

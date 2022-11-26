@@ -4,15 +4,22 @@ import { NavLink } from "react-router-dom";
 import {
   Box,
   Button,
+  Center,
+  chakra,
   Checkbox,
+  Divider,
   Flex,
   FormControl,
   FormLabel,
+  GridItem,
   Heading,
   Icon,
   Input,
   InputGroup,
   InputRightElement,
+  Select,
+  SimpleGrid,
+  Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -47,7 +54,7 @@ function Register() {
   const handleClick = () => setShow(!show);
   return (
     <DefaultAuth illustrationBackground={illustration} >
-      <Flex
+      <Flex 
         maxW={{ base: "100%", md: "max-content" }}
         w='100%'
         mx={{ base: "auto", lg: "0px" }}
@@ -55,160 +62,243 @@ function Register() {
         h='100%'
         alignItems='start'
         justifyContent='center'
-        mb={{ base: "30px", md: "60px" }}
+        mb={{ base: "30px", md: "120px", lg: "100px" }}
         px={{ base: "25px", md: "0px" }}
-        mt={{ base: "40px", md: "14vh" }}
+        mt={{ base: "40px", md: "14vh", lg: "0px" }}
         flexDirection='column'>
-        <Box me='auto'>
-          <Heading color={textColor} fontSize='36px' mb='10px'>
+        <Box me='auto' mt="100px">
+          <Heading color={textColor} fontSize='22px' mb='10px' >
             Cadastro de Usuário
           </Heading>
-          <Text
-            mb='36px'
-            ms='4px'
-            color={textColorSecondary}
-            fontWeight='400'
-            fontSize='md'>
-            
-          </Text>
+
         </Box>
         <Flex
           zIndex='2'
           direction='column'
-          w={{ base: "100%", md: "420px" }}
+          w={{ base: "100%", md: "450px" }}
+        
           maxW='100%'
           background='transparent'
           borderRadius='15px'
           mx={{ base: "auto", lg: "unset" }}
           me='auto'
-          mb={{ base: "20px", md: "auto" }}>
-          <Button
-            fontSize='sm'
-            me='0px'
-            mb='26px'
-            py='15px'
-            h='50px'
-            borderRadius='16px'
-            bg={googleBg}
-            color={googleText}
-            fontWeight='500'
-            _hover={googleHover}
-            _active={googleActive}
-            _focus={googleActive}>
-            <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
-            Login com Google
-          </Button>
-          <Flex align='center' mb='25px'>
-            <HSeparator />
-            <Text color='gray.400' mx='14px'>
-              ou
-            </Text>
-            <HSeparator />
-          </Flex>
-          <FormControl>
-            <FormLabel
-              display='flex'
-              ms='4px'
-              fontSize='sm'
-              fontWeight='500'
-              color={textColor}
-              mb='8px'>
-              Email<Text color={brandStars}>*</Text>
-            </FormLabel>
-            <Input
-              isRequired={true}
-              variant='auth'
-              fontSize='sm'
-              ms={{ base: "0px", md: "0px" }}
-              type='email'
-              placeholder='mail@simmmple.com'
-              mb='24px'
-              fontWeight='500'
-              size='lg'
-            />
-            <FormLabel
-              ms='4px'
-              fontSize='sm'
-              fontWeight='500'
-              color={textColor}
-              display='flex'>
-              Senha<Text color={brandStars}>*</Text>
-            </FormLabel>
-            <InputGroup size='md'>
-              <Input
-                isRequired={true}
-                fontSize='sm'
-                placeholder='Min. 8 characters'
-                mb='24px'
-                size='lg'
-                type={show ? "text" : "password"}
-                variant='auth'
-              />
-              <InputRightElement display='flex' alignItems='center' mt='4px'>
-                <Icon
-                  color={textColorSecondary}
-                  _hover={{ cursor: "pointer" }}
-                  as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}
-                  onClick={handleClick}
-                />
-              </InputRightElement>
-            </InputGroup>
-            <Flex justifyContent='space-between' align='center' mb='24px'>
-              <FormControl display='flex' alignItems='center'>
-                <Checkbox
-                  id='remember-login'
-                  colorScheme='brandScheme'
-                  me='10px'
-                />
-                <FormLabel
-                  htmlFor='remember-login'
-                  mb='0'
-                  fontWeight='normal'
-                  color={textColor}
-                  fontSize='sm'>
-                  Mantenha-me conectado
+          pb={{ base: "20px", md: "20px", }}>
 
-                </FormLabel>
-              </FormControl>
-              <NavLink to='/auth/forgot-password'>
-                <Text
-                  color={textColorBrand}
-                  fontSize='sm'
-                  w='124px'
-                  fontWeight='500'>
-                  Esqueceu a senha?
-                </Text>
-              </NavLink>
-            </Flex>
-            <Button
-              fontSize='sm'
-              variant='brand'
-              fontWeight='500'
-              w='100%'
-              h='50'
-              mb='24px'>
-              Login
-            </Button>
-          </FormControl>
-          <Flex
-            flexDirection='column'
-            justifyContent='center'
-            alignItems='start'
-            maxW='100%'
-            mt='0px'>
-            <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
-              Não registrado ainda? 
-              <NavLink to='/auth/sign-up'>
-                <Text
-                  color={textColorBrand}
-                  as='span'
-                  ms='5px'
-                  fontWeight='500'>
-                  Crie a sua conta aqui
-                </Text>
-              </NavLink>
-            </Text>
-          </Flex>
+          <SimpleGrid
+            w="100%"
+
+            display={{
+              base: "initial",
+              md: "grid",
+            }}
+            columns={{
+              md: 1,
+            }}
+            spacing={{
+              md: 2,
+            }}
+          >
+            <GridItem
+              colSpan={{
+                md: 1,
+              }}
+            >
+
+            </GridItem>
+            <GridItem
+              mt={[5, null, 0]}
+              colSpan={{
+                md: 2,
+              }}
+            >
+              <chakra.form
+                method="POST"
+                shadow="base"
+                rounded={[null, "md"]}
+                overflow={{
+                  sm: "hidden",
+                }}
+                mb="20px"
+              >
+                <Stack
+                  px={4}
+                  py={5}
+                  p={[null, 6]}
+                  bg="white"
+                  _dark={{
+                    bg: "#141517",
+                  }}
+                  spacing={6}
+                >
+                  <SimpleGrid columns={6} spacing={6}>
+                    <FormControl as={GridItem} colSpan={[6, 3]}>
+                      <FormLabel
+                        htmlFor="first_name"
+                        fontSize="sm"
+                        fontWeight="md"
+                        color="gray.700"
+                        _dark={{
+                          color: "gray.50",
+                        }}
+                      >
+                        Nome Completo
+                      </FormLabel>
+                      <Input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
+                        autoComplete="given-name"
+                        mt={1}
+                        focusBorderColor="brand.400"
+                        shadow="sm"
+                        size="sm"
+                        w="350px"
+                        rounded="md"
+                      />
+                    </FormControl>
+
+                    <FormControl as={GridItem} colSpan={[6, 4]}>
+                      <FormLabel
+                        htmlFor="first_name"
+                        fontSize="sm"
+                        fontWeight="md"
+                        color="gray.700"
+                        _dark={{
+                          color: "gray.50",
+                        }}
+                      >
+                        CPF
+                      </FormLabel>
+                      <Input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
+                        autoComplete="given-name"
+                        mt={1}
+                        focusBorderColor="brand.400"
+                        shadow="sm"
+                        size="sm"
+                        w="350px"
+                        rounded="md"
+                      />
+                    </FormControl>
+
+                    <FormControl as={GridItem} colSpan={[6, 3]}>
+                      <FormLabel
+                        htmlFor="first_name"
+                        fontSize="sm"
+                        fontWeight="md"
+                        color="gray.700"
+                        _dark={{
+                          color: "gray.50",
+                        }}
+                      >
+                        TELEFONE
+                      </FormLabel>
+                      <Input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
+                        autoComplete="given-name"
+                        mt={1}
+                        focusBorderColor="brand.400"
+                        shadow="sm"
+                        size="sm"
+                        w="350px"
+                        rounded="md"
+                      />
+                    </FormControl>
+
+                    <FormControl as={GridItem} colSpan={[6, 4]}>
+                      <FormLabel
+                        htmlFor="email_address"
+                        fontSize="sm"
+                        fontWeight="md"
+                        color="gray.700"
+                        _dark={{
+                          color: "gray.50",
+                        }}
+                      >
+                        Email
+                      </FormLabel>
+                      <Input
+                        type="text"
+                        name="email_address"
+                        id="email_address"
+                        autoComplete="email"
+                        mt={1}
+                        focusBorderColor="brand.400"
+                        shadow="sm"
+                        size="sm"
+                        w="350px"
+                        rounded="md"
+                      />
+                    </FormControl>
+                    <FormControl as={GridItem} colSpan={[6, 4]}>
+                      <FormLabel
+                        htmlFor="email_address"
+                        fontSize="sm"
+                        fontWeight="md"
+                        color="gray.700"
+                        _dark={{
+                          color: "gray.50",
+                        }}
+                      >
+                        Senha
+                      </FormLabel>
+                      <InputGroup size='md' w="350px">
+                        <Input
+                          isRequired={true}
+                          fontSize='sm'
+                          placeholder='Min. 8 characters'
+                          mb='24px'
+                          size='lg'
+                          type={show ? "text" : "password"}
+                          variant='auth'
+                          w="350px"
+                        />
+                        <InputRightElement display='flex' alignItems='center' mt='4px'>
+                          <Icon
+                            color={textColorSecondary}
+                            _hover={{ cursor: "pointer" }}
+                            as={show ? RiEyeCloseLine : MdOutlineRemoveRedEye}
+                            onClick={handleClick}
+                          />
+                        </InputRightElement>
+                      </InputGroup>
+                    </FormControl>
+
+                  </SimpleGrid>
+                </Stack>
+                <Box
+                  px={{
+                    base: 4,
+                    sm: 6,
+                  }}
+                  py={3}
+                  // bg="gray.50"
+                  // bg="transparent"
+                  textAlign="center"
+                  mb="20px"
+                >
+                  <Button
+                    type="submit"
+                    colorScheme="brand"
+                    _focus={{
+                      shadow: "",
+                    }}
+                    fontWeight="md"
+                    fontSize={22}
+                    w="200px"
+                    h="50px"
+
+                  >
+                    Cadastrar
+                  </Button>
+                </Box>
+              </chakra.form>
+            </GridItem>
+          </SimpleGrid>
         </Flex>
       </Flex>
     </DefaultAuth>

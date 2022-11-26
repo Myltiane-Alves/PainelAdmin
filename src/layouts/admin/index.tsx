@@ -17,7 +17,7 @@ export default function Dashboard(props: { [x: string]: any }) {
 	const [ toggleSidebar, setToggleSidebar ] = useState(false);
 	// functions for changing the states from components
 	const getRoute = () => {
-		return window.location.pathname !== '/admin/full-screen-maps';
+		return window.location.pathname !== '/admin';
 	};
 	const getActiveRoute = (routes: RoutesType[]): string => {
 		let activeRoute = 'Default Brand Text';
@@ -78,7 +78,7 @@ export default function Dashboard(props: { [x: string]: any }) {
 					transitionDuration='.2s, .2s, .35s'
 					transitionProperty='top, bottom, width'
 					transitionTimingFunction='linear, linear, ease'>
-					<Portal>
+					{/* <Portal>
 						<Box>
 							<Navbar
 								onOpen={onOpen}
@@ -90,7 +90,7 @@ export default function Dashboard(props: { [x: string]: any }) {
 								{...rest}
 							/>
 						</Box>
-					</Portal>
+					</Portal> */}
 
 					{getRoute() ? (
 						<Box mx='auto' p={{ base: '20px', md: '30px' }} pe='20px' minH='100vh' pt='50px'>
@@ -101,7 +101,7 @@ export default function Dashboard(props: { [x: string]: any }) {
 						</Box>
 					) : null}
 					<Box>
-						<Footer />
+						{/* <Footer /> */}
 					</Box>
 				</Box>
 			</SidebarContext.Provider>

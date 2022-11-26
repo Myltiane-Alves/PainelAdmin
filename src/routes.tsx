@@ -12,6 +12,7 @@ import RTL from 'views/admin/rtl';
 import SignInCentered from 'views/auth/signIn';
 import ProductCreated from 'views/admin/ProductCreated';
 import ProductList from 'views/admin/ProductList';
+import Register from 'views/auth/register';
 
 const routes = [
 	{
@@ -21,14 +22,7 @@ const routes = [
 		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
 		component: MainDashboard
 	},
-	{
-		name: 'NFT Marketplace',
-		layout: '/admin',
-		path: '/nft-marketplace',
-		icon: <Icon as={MdOutlineShoppingCart} width='20px' height='20px' color='inherit' />,
-		component: NFTMarketplace,
-		secondary: true
-	},
+
 	{
 		name: 'Data Tables',
 		layout: '/admin',
@@ -69,15 +63,9 @@ const routes = [
 		layout: '/auth',
 		path: '/register',
 		icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
-		component: SignInCentered
+		component: Register
 	},
-	{
-		name: 'RTL Admin',
-		layout: '/rtl',
-		path: '/rtl-default',
-		icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
-		component: RTL
-	}
+	
 ];
 
 export default routes;

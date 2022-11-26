@@ -40,8 +40,6 @@ export default function CreateProduct(props: { columnsData: any; tableData: any 
 					</Text>
 					
 				</Stack>
-		
-
 
 				<Box
 					bg="#edf3f8"
@@ -50,8 +48,6 @@ export default function CreateProduct(props: { columnsData: any; tableData: any 
 					}}
 					p={10}
 				>
-				
-
 					<Divider
 						my="5"
 						borderColor="gray.300"
@@ -63,7 +59,6 @@ export default function CreateProduct(props: { columnsData: any; tableData: any 
 							sm: "visible",
 						}}
 					/>
-
 					<Box mt={[10, 0]}>
 						<SimpleGrid
 							display={{
